@@ -1,8 +1,8 @@
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+﻿import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
 import { auth } from '../../firebase/firebase';
 import { X, LogOut, LayoutDashboard, ClipboardList, FileText, Activity, ShieldCheck, UserCircle, Settings } from 'lucide-react';
-import { useProfile } from '../../contexts/ProfileContext';
+import { useProfile } from '../../context/ProfileContext';
 
 
 
@@ -94,3 +94,4 @@ const MobileNav = ({ open, onClose }) => {
 };
 
 export default MobileNav;
+

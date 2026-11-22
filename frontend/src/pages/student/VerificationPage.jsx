@@ -5,9 +5,9 @@ import {
   ArrowRight, Check, CheckCircle, RefreshCw, XCircle, Clock,
   Copy, FileText, Home, AlertCircle
 } from 'lucide-react';
-import packageInfo from '../../package.json';
+import packageInfo from '../../../package.json';
 import { getAuth } from 'firebase/auth';
-import { db } from '../firebase/firebase';
+import { db } from '../../firebase/firebase';
 import jsPDF from 'jspdf';
 
 export default function VerificationPage() {

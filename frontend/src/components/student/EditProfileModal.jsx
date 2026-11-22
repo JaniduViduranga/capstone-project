@@ -1,6 +1,6 @@
-import { useState, useRef, useEffect } from 'react';
+﻿import { useState, useRef, useEffect } from 'react';
 import { X, Upload } from 'lucide-react';
-import { useProfile } from '../../contexts/ProfileContext';
+import { useProfile } from '../../context/ProfileContext';
 import { useNavigate } from 'react-router-dom';
 
 const EditProfileModal = () => {
@@ -237,3 +237,4 @@ const EditProfileModal = () => {
 };
 
 export default EditProfileModal;
+

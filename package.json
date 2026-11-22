@@ -1,14 +1,23 @@
 {
-  "dependencies": {
-    "cors": "^2.8.6",
-    "firebase-admin": "^13.10.0"
-  },
   "name": "capstone-project",
   "version": "1.0.0",
   "description": "A blockchain-backed, AI-powered identity verification system integrated into a student portal. This capstone project ensures academic integrity for online examinations through real-time liveness detection, document verification, and immutable verification records.",
   "main": "index.js",
   "scripts": {
+    "dev": "concurrently -n backend,frontend -c blue,green \"npm run dev --prefix backend\" \"npm run dev --prefix frontend\"",
+    "dev:all": "concurrently -n backend,frontend,ai -c blue,green,magenta \"npm run dev --prefix backend\" \"npm run dev --prefix frontend\" \"cd ai-service && .\\venv\\Scripts\\python.exe app.py\"",
+    "dev:backend": "npm run dev --prefix backend",
+    "dev:frontend": "npm run dev --prefix frontend",
+    "dev:ai": "cd ai-service && .\\venv\\Scripts\\python.exe app.py",
+    "build": "npm run build --prefix frontend",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "firebase-admin": "^13.10.0"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
   },
   "repository": {
     "type": "git",

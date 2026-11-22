@@ -1,6 +1,6 @@
-import React, { useState, useRef, useEffect } from 'react';
+﻿import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useProfile } from '../../contexts/ProfileContext';
+import { useProfile } from '../../context/ProfileContext';
 import { ref, onValue } from 'firebase/database';
 import { getAuth } from 'firebase/auth';
 import { db } from '../../firebase/firebase';
@@ -250,7 +250,7 @@ const Dashboard = () => {
               </div>
               <div className="space-y-4">
                 {loadingExams ? (
-                  <p className="text-sm text-gray-400 text-center py-6">Loading exams…</p>
+                  <p className="text-sm text-gray-400 text-center py-6">Loading examsâ€¦</p>
                 ) : upcomingExams.length === 0 ? (
                   <div className="text-center py-8 text-gray-400">
                     <Calendar size={32} className="mx-auto mb-2 opacity-30" />
@@ -275,7 +275,7 @@ const Dashboard = () => {
                     </div>
                     <div className="flex items-center gap-2 text-sm text-gray-700 mb-3">
                       <Calendar size={16} className="text-gray-500" />
-                      <span>{exam.date} • {exam.time}</span>
+                      <span>{exam.date} â€¢ {exam.time}</span>
                     </div>
 
                     {exam.isVerified && exam.txHash && (
@@ -315,7 +315,7 @@ const Dashboard = () => {
               </div>
               <div className="space-y-3">
                 {loadingActivity ? (
-                  <p className="text-sm text-gray-400 text-center py-6">Loading activity…</p>
+                  <p className="text-sm text-gray-400 text-center py-6">Loading activityâ€¦</p>
                 ) : activities.length === 0 ? (
                   <div className="text-center py-8 text-gray-400">
                     <Clock size={32} className="mx-auto mb-2 opacity-30" />
@@ -378,7 +378,7 @@ const Dashboard = () => {
       ) : (
         <div className="space-y-5">
 
-          {/* ── Profile Card ── */}
+          {/* â”€â”€ Profile Card â”€â”€ */}
           <div className="bg-white p-6 rounded-2xl shadow-sm">
             {/* Top row: avatar + name + buttons */}
             <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-5">
@@ -439,7 +439,7 @@ const Dashboard = () => {
             </div>
           </div>
 
-          {/* ── Stat Cards ── */}
+          {/* â”€â”€ Stat Cards â”€â”€ */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {(() => {
               const totalEnrolled = upcomingExams.length;
@@ -528,7 +528,7 @@ const Dashboard = () => {
             })()}
           </div>
 
-          {/* ── Tab Nav ── */}
+          {/* â”€â”€ Tab Nav â”€â”€ */}
           <nav className="relative flex bg-gray-100 rounded-2xl p-1 w-fit">
             {/* Sliding white pill */}
             <span
@@ -578,3 +578,4 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
+

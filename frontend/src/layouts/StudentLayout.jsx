@@ -1,16 +1,15 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
 import { auth } from '../firebase/firebase';
 import MobileNav from '../components/student/MobileNav';
 import NotificationsDropdown from '../components/student/NotificationsDropdown';
 import SettingsDropdown from '../components/student/SettingsDropdown';
-import { useProfile } from '../contexts/ProfileContext';
+import { useProfile } from '../context/ProfileContext';
+import { useAuth } from '../context/AuthContext';
 import { Bell, LogOut, Menu, Settings } from 'lucide-react';
 import logoImg from '../assets/logo.jpg';
 import EditProfileModal from '../components/student/EditProfileModal';
-
-
 
 const StudentLayout = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -18,17 +17,11 @@ const StudentLayout = () => {
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [unreadCount, setUnreadCount] = useState(2); // 2 unread initially
   const { setEditModalOpen } = useProfile();
+  const { logout } = useAuth();
   const navigate = useNavigate();
 
   const handleLogout = async () => {
-    try {
-      await signOut(auth);
-    } catch (err) {
-      console.error('Firebase signOut error:', err);
-    }
-    localStorage.removeItem('token');
-    localStorage.removeItem('studentProfile');
-    localStorage.removeItem('studentAvatar');
+    await logout();
     navigate('/login');
   };
 
@@ -95,3 +88,4 @@ const StudentLayout = () => {
 };
 
 export default StudentLayout;
+

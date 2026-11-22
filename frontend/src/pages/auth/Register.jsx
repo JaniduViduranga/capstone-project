@@ -1,9 +1,9 @@
-import { auth, db } from "../../firebase/firebase";
+﻿import { auth, db } from "../../firebase/firebase";
 import { createUserWithEmailAndPassword, sendEmailVerification, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from 'react-router-dom';
 import { Mail, Lock, KeyRound, Cpu, GraduationCap, User, CreditCard } from 'lucide-react';
-import { useProfile } from "../../contexts/ProfileContext";
+import { useProfile } from "../../context/ProfileContext";
 import logoImg from '../../assets/logo.jpg';
 
 const Register = () => {
@@ -395,3 +395,4 @@ const BrandSection = () => (
 );
 
 export default Register;
+

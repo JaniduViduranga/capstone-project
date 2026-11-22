@@ -1,4 +1,4 @@
-import { auth } from "../firebase/firebase";
+﻿import { auth } from "../../firebase/firebase";
 import { signOut } from "firebase/auth";
 import { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -6,9 +6,9 @@ import {
   ShieldCheck, Bell, Settings, LogOut, Edit3, Calendar,
   CheckCircle2, Clock, ArrowRight, BookOpen, Activity, LayoutDashboard, X, Upload
 } from 'lucide-react';
-import { useProfile } from '../contexts/ProfileContext';
-import NotificationsDropdown from '../components/student/NotificationsDropdown';
-import SettingsDropdown from '../components/student/SettingsDropdown';
+import { useProfile } from '../../context/ProfileContext';
+import NotificationsDropdown from '../../components/student/NotificationsDropdown';
+import SettingsDropdown from '../../components/student/SettingsDropdown';
 
 const Home = () => {
   const navigate = useNavigate();
@@ -458,3 +458,4 @@ const IconButton = ({ icon, notification }) => (
 );
 
 export default Home;
+

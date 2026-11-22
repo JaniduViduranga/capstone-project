@@ -1,8 +1,9 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getDatabase } from "firebase/database";
+import { getFirestore } from "firebase/firestore";
 
-// Your web app's Firebase configuration
+// Unified Firebase configuration
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
   authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
@@ -15,6 +16,11 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-export const auth = getAuth(app);
-export const db = getDatabase(app);
 
+export const auth = getAuth(app);
+export const rtdb = getDatabase(app);
+export const firestore = getFirestore(app);
+// 'db' defaults to Realtime Database for existing student code, but firestore is available
+export const db = rtdb;
+
+export default app;
